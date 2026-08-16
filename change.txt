@@ -1,0 +1,13 @@
+
+declare variable	vibe --> manifest 
+print	spill() --> yap()
+true / false	nocap / cap 
+null / empty	ghosted --> dead 
+if / else-if / else	fr / orfr / nah
+while loop	onloop --> lockin
+for loop	grind
+define function	bestie
+return	bet
+and / or / not	vibin --> plus / lowkey  / sus 
+
+break / continue	dip / skrt --> move 
