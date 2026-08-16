@@ -5,8 +5,8 @@
 
 ```yap
 fun fib(n) {
-  when (n < 2) { bet n }
-  bet fib(n - 1) + fib(n - 2)
+  when (n < 2) { give n }
+  give fib(n - 1) + fib(n - 2)
 }
 
 run (manifest i = 0; i < 11; i = i + 1) {
@@ -133,11 +133,11 @@ on the right. Everything runs client-side — there's no backend. (Press
 | while loop         | `lockin`        |
 | for loop           | `run`           |
 | define function    | `fun`           |
-| return             | `bet`           |
+| return             | `give`          |
 | logical AND        | `plus`          |
 | logical OR         | `alt`           |
 | logical NOT        | `nah`           |
-| break              | `dip`           |
+| break              | `drop`          |
 | continue           | `move`          |
 
 Comments are `//` to end of line. Statements end with a newline **or** a `;`
@@ -179,7 +179,7 @@ manifest i = 0
 lockin (i < 10) {
   i = i + 1
   when (i == 3) { move }   // continue
-  when (i == 7) { dip }    // break
+  when (i == 7) { drop }   // break
   yap(i)                   // 1 2 4 5 6
 }
 ```
@@ -192,16 +192,16 @@ run (manifest j = 0; j < 5; j = j + 1) {
 }
 ```
 
-### Functions (`fun`), return (`bet`), recursion, closures
+### Functions (`fun`), return (`give`), recursion, closures
 
 ```yap
 fun add(a, b) {
-  bet a + b
+  give a + b
 }
 
 fun fib(n) {
-  when (n < 2) { bet n }
-  bet fib(n - 1) + fib(n - 2)
+  when (n < 2) { give n }
+  give fib(n - 1) + fib(n - 2)
 }
 
 yap(add(2, 3))   // 5
@@ -213,8 +213,8 @@ Functions are first-class values and close over their defining scope:
 ```yap
 fun makeCounter() {
   manifest n = 0
-  fun tick() { n = n + 1  bet n }
-  bet tick
+  fun tick() { n = n + 1  give n }
+  give tick
 }
 manifest c = makeCounter()
 yap(c())  // 1

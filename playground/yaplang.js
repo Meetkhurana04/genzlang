@@ -49,7 +49,7 @@ function typeName(value) {
   if (typeof value === "number") return "number";
   if (typeof value === "string") return "string";
   if (typeof value === "boolean") return "boolean";
-  if (value === null) return "ghosted";
+  if (value === null) return "dead";
   if (Array.isArray(value)) return "array";
   return "function";
 }
@@ -59,7 +59,7 @@ function isTruthy(value) {
   return true;
 }
 function stringify(value, topLevel = true) {
-  if (value === null) return "ghosted";
+  if (value === null) return "dead";
   if (value === true) return "nocap";
   if (value === false) return "cap";
   if (typeof value === "number") return formatNumber(value);
@@ -69,7 +69,7 @@ function stringify(value, topLevel = true) {
   if (Array.isArray(value)) {
     return "[" + value.map((v) => stringify(v, false)).join(", ") + "]";
   }
-  return `<bestie ${value.name}>`;
+  return `<fun ${value.name}>`;
 }
 function formatNumber(n) {
   if (Number.isNaN(n)) return "NaN";
@@ -153,7 +153,7 @@ function createBuiltins() {
       arr.push(args[1]);
       return arr.length;
     }),
-    // yoink(arr) -> pop and return the last element (ghosted if empty).
+    // yoink(arr) -> pop and return the last element (dead if empty).
     new BuiltinFunction("yoink", 1, (_ctx, args) => {
       const arr = expectArray(args[0], "yoink", "");
       if (arr.length === 0) return null;
@@ -619,11 +619,11 @@ var KEYWORDS = {
   lockin: "WHILE" /* WHILE */,
   run: "FOR" /* FOR */,
   fun: "FUNCTION" /* FUNCTION */,
-  bet: "RETURN" /* RETURN */,
+  give: "RETURN" /* RETURN */,
   plus: "AND" /* AND */,
   alt: "OR" /* OR */,
   nah: "NOT" /* NOT */,
-  dip: "BREAK" /* BREAK */,
+  drop: "BREAK" /* BREAK */,
   move: "CONTINUE" /* CONTINUE */
 };
 var KEYWORD_SPELLINGS = Object.fromEntries(

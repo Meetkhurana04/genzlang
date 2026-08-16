@@ -1,8 +1,8 @@
 // fibonacci.yap — recursion with fun + bet
 
 fun fib(n) {
-  when (n < 2) { bet n }
-  bet fib(n - 1) + fib(n - 2)
+  when (n < 2) { give n }
+  give fib(n - 1) + fib(n - 2)
 }
 
 yap("fib(10) = " + fib(10))   // 55

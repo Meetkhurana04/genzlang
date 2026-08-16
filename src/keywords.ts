@@ -29,11 +29,11 @@ export const KEYWORDS: Readonly<Record<string, TokenType>> = {
   lockin: TokenType.WHILE,
   run: TokenType.FOR,
   fun: TokenType.FUNCTION,
-  bet: TokenType.RETURN,
+  give: TokenType.RETURN,
   plus: TokenType.AND,
   alt: TokenType.OR,
   nah: TokenType.NOT,
-  dip: TokenType.BREAK,
+  drop: TokenType.BREAK,
   move: TokenType.CONTINUE,
 };
 

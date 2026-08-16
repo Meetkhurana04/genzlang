@@ -43,13 +43,13 @@ describe("interpreter — section 3.4 examples", () => {
     expect(lines(program)).toEqual(["mid but passing"]);
   });
 
-  it("while loop with break (dip) and continue (move)", () => {
+  it("while loop with break (drop) and continue (move)", () => {
     const program = `
       manifest i = 0
       lockin (i < 10) {
         i = i + 1
         when (i == 3) { move }
-        when (i == 7) { dip }
+        when (i == 7) { drop }
         yap(i)
       }
     `;
@@ -69,10 +69,10 @@ describe("interpreter — section 3.4 examples", () => {
 
   it("functions, return, and recursion", () => {
     const program = `
-      fun add(a, b) { bet a + b }
+      fun add(a, b) { give a + b }
       fun fib(n) {
-        when (n < 2) { bet n }
-        bet fib(n - 1) + fib(n - 2)
+        when (n < 2) { give n }
+        give fib(n - 1) + fib(n - 2)
       }
       yap(add(2, 3))
       yap(fib(10))
@@ -166,8 +166,8 @@ describe("interpreter — semantics", () => {
     const program = `
       fun makeCounter() {
         manifest n = 0
-        fun tick() { n = n + 1\n bet n }
-        bet tick
+        fun tick() { n = n + 1\n give n }
+        give tick
       }
       manifest c = makeCounter()
       yap(c())
@@ -209,7 +209,7 @@ describe("interpreter — error handling", () => {
   });
 
   it("reports wrong argument count", () => {
-    const r = exec("fun add(a, b) { bet a + b }\nyap(add(1))");
+    const r = exec("fun add(a, b) { give a + b }\nyap(add(1))");
     expect(r.ok).toBe(false);
     expect(r.error).toMatch(/wants 2 args but got 1/);
   });

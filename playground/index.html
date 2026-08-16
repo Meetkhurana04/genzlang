@@ -405,8 +405,8 @@ yap("it's giving " + year + " energy fr fr")`,
 }`,
 
         "🌀 fibonacci": `fun fib(n) {
-  when (n < 2) { bet n }
-  bet fib(n - 1) + fib(n - 2)
+  when (n < 2) { give n }
+  give fib(n - 1) + fib(n - 2)
 }
 
 run (manifest i = 0; i < 11; i = i + 1) {
@@ -421,7 +421,7 @@ manifest i = 0
 lockin (i < 10) {
   i = i + 1
   when (i == 3) { move }   // continue
-  when (i == 7) { dip }    // break
+  when (i == 7) { drop }   // break
   yap("count " + i)
 }`,
 
@@ -546,9 +546,9 @@ yap("size: " + howmany(squad))`,
                   ["while loop", "<code>lockin</code>"],
                   ["for loop", "<code>run</code>"],
                   ["define function", "<code>fun</code>"],
-                  ["return", "<code>bet</code>"],
+                  ["return", "<code>give</code>"],
                   ["and / or / not", "<code>plus</code> / <code>alt</code> / <code>nah</code>"],
-                  ["break / continue", "<code>dip</code> / <code>move</code>"],
+                  ["break / continue", "<code>drop</code> / <code>move</code>"],
                 ],
               },
             },
@@ -619,15 +619,15 @@ when (score >= 90) {
           h: "Loops — lockin & run",
           blocks: [
             {
-              p: `<code>lockin</code> is a while loop; <code>run</code> is a C-style for loop: <code>run (init; cond; update)</code>. Use <code>dip</code> to break and <code>move</code> to continue.`,
+              p: `<code>lockin</code> is a while loop; <code>run</code> is a C-style for loop: <code>run (init; cond; update)</code>. Use <code>drop</code> to break and <code>move</code> to continue.`,
             },
             {
-              cap: "lockin (while) + dip / move",
+              cap: "lockin (while) + drop / move",
               code: `manifest i = 0
 lockin (i < 10) {
   i = i + 1
   when (i == 3) { move }   // continue
-  when (i == 7) { dip }    // break
+  when (i == 7) { drop }   // break
   yap(i)
 }`,
             },
@@ -640,20 +640,20 @@ lockin (i < 10) {
           ],
         },
         {
-          h: "Functions — fun & bet",
+          h: "Functions — fun & give",
           blocks: [
             {
-              p: `Declare with <code>fun</code>, return with <code>bet</code>. Functions are first-class values and support recursion.`,
+              p: `Declare with <code>fun</code>, return with <code>give</code>. Functions are first-class values and support recursion.`,
             },
             {
               cap: "recursion",
               code: `fun add(a, b) {
-  bet a + b
+  give a + b
 }
 
 fun fib(n) {
-  when (n < 2) { bet n }
-  bet fib(n - 1) + fib(n - 2)
+  when (n < 2) { give n }
+  give fib(n - 1) + fib(n - 2)
 }
 
 yap(add(2, 3))   // 5
@@ -666,8 +666,8 @@ yap(fib(10))     // 55`,
               cap: "closures",
               code: `fun makeCounter() {
   manifest n = 0
-  fun tick() { n = n + 1  bet n }
-  bet tick
+  fun tick() { n = n + 1  give n }
+  give tick
 }
 manifest c = makeCounter()
 yap(c())   // 1

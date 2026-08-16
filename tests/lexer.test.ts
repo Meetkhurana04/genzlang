@@ -26,7 +26,7 @@ describe("lexer", () => {
   });
 
   it("maps slang keywords to concept token types", () => {
-    expect(types("manifest when orwhen nvm lockin run fun bet")).toEqual([
+    expect(types("manifest when orwhen nvm lockin run fun give")).toEqual([
       TokenType.VAR,
       TokenType.IF,
       TokenType.ELIF,
@@ -39,7 +39,7 @@ describe("lexer", () => {
   });
 
   it("treats logical words and booleans as keywords with literals", () => {
-    const toks = tokenize("nocap cap dead plus alt nah dip move");
+    const toks = tokenize("nocap cap dead plus alt nah drop move");
     expect(toks[0]).toMatchObject({ type: TokenType.TRUE, literal: true });
     expect(toks[1]).toMatchObject({ type: TokenType.FALSE, literal: false });
     expect(toks[2]).toMatchObject({ type: TokenType.NULL, literal: null });

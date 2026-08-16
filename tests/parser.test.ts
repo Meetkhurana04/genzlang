@@ -84,7 +84,7 @@ describe("parser", () => {
   });
 
   it("parses function declarations with params", () => {
-    const stmt = only("fun add(a, b) { bet a + b }") as Extract<
+    const stmt = only("fun add(a, b) { give a + b }") as Extract<
       Stmt,
       { kind: "FunctionDecl" }
     >;

@@ -5,11 +5,11 @@ manifest secret = 7
 
 fun checkGuess(guess) {
   when (guess == secret) {
-    bet "you ate that — " + guess + " is it!"
+    give "you ate that — " + guess + " is it!"
   } orwhen (guess < secret) {
-    bet guess + " is lowkey too small"
+    give guess + " is lowkey too small"
   } nvm {
-    bet guess + " is highkey too big"
+    give guess + " is highkey too big"
   }
 }
 
@@ -34,6 +34,6 @@ manifest i = 0
 lockin (i < 10) {
   i = i + 1
   when (i == 3) { move }   // skip 3
-  when (i == 7) { dip }    // stop at 7
+  when (i == 7) { drop }    // stop at 7
   yap("count " + i)
 }
