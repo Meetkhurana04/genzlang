@@ -1,7 +1,7 @@
 name: Deploy playground to GitHub Pages
 
-# Builds the browser bundle and publishes the playground/ folder to Pages.
-# Runs on every push to main, and can be triggered manually.
+# Builds the React playground (playground-react) and publishes its dist/
+# folder to Pages. Runs on every push to main, and can be triggered manually.
 on:
   push:
     branches: [main]
@@ -31,17 +31,21 @@ jobs:
           node-version: 20
 
       # package-lock.json isn't committed, so use `npm install` (not `npm ci`).
-      - name: Install dependencies
+      - name: Install dependencies (root)
         run: npm install
 
-      # Rebuilds dist/ and the fresh playground/yaplang.js bundle.
+      - name: Install dependencies (playground-react)
+        run: npm install
+        working-directory: playground-react
+
+      # Build the React playground bundle (vite, relative base for Pages).
       - name: Build
         run: npm run build
 
       - name: Upload playground as Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: playground
+          path: playground-react/dist
 
   deploy:
     needs: build

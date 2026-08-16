@@ -1,5 +1,5 @@
 /**
- * Runtime value model for YapLang.
+ * Runtime value model for GenzLang.
  *
  * A YapValue is one of:
  *   - number   (JS number)

@@ -1,5 +1,5 @@
 /**
- * YapLang error types.
+ * GenzLang error types.
  *
  * Every user-facing error carries a line number and a Gen-Z flavored — but
  * genuinely clear — message. `runner.ts` catches these and prints `.message`

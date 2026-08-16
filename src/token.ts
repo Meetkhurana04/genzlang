@@ -1,5 +1,5 @@
 /**
- * Token definitions for YapLang.
+ * Token definitions for GenzLang.
  *
  * The TokenType enum is intentionally "concept-based" rather than
  * "spelling-based" — e.g. the keyword for "if" is a single token type `IF`,

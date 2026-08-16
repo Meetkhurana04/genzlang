@@ -1,4 +1,4 @@
-// hello.yap — the classic, YapLang style
+// hello.yap — the classic, GenzLang style
 
 manifest lang = "GenzLang"
 manifest year = 2026
