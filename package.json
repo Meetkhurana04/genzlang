@@ -29,6 +29,7 @@
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "playground": "npm run build && npx serve playground",
+    "playground:react": "npm --prefix playground-react run build && npx serve playground-react/dist",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
