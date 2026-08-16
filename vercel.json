@@ -1,5 +1,6 @@
 {
   "framework": "vite",
+  "installCommand": "npm install --no-audit --no-fund && npm --prefix playground-react install --no-audit --no-fund",
   "buildCommand": "npm --prefix playground-react run build",
   "outputDirectory": "playground-react/dist"
 }
