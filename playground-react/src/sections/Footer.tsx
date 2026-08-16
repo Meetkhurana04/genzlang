@@ -41,6 +41,12 @@ export default function Footer() {
           >
             Examples
           </Link>
+          <Link
+            to="/problems"
+            className="text-[9px] sm:text-[10px] uppercase tracking-widest text-text-hint hover:text-text-primary transition-colors"
+          >
+            Problems
+          </Link>
           <a
             href="https://github.com/xOAviOx/yap-lang"
             target="_blank"

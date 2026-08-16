@@ -1,6 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { BookOpen, ChevronLeft, Play, RotateCcw } from 'lucide-react'
+import {
+  BookOpen,
+  BrainCircuit,
+  ChevronLeft,
+  Play,
+  RotateCcw,
+} from 'lucide-react'
 import { run } from '@yap/runner'
 import DocsSidebar from '../components/DocsSidebar'
 import { EXAMPLES } from '../data/examples'
@@ -129,6 +135,13 @@ export default function PlaygroundPage() {
               }`}
             />
           </button>
+          <Link
+            to="/problems"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-divider text-xs font-mono text-text-secondary hover:text-text-primary hover:border-flow-shell-start/30 transition-colors"
+          >
+            <BrainCircuit className="w-4 h-4 text-text-hint" />
+            PROBLEMS
+          </Link>
           <Link
             to="/about"
             className="inline-flex items-center px-4 py-2 rounded-full border border-divider text-xs font-mono text-text-secondary hover:text-text-primary hover:border-flow-shell-start/30 transition-colors"

@@ -5,6 +5,8 @@ import FloatingGrid from './components/FloatingGrid'
 import HeroPage from './pages/HeroPage'
 import PlaygroundPage from './pages/PlaygroundPage'
 import AboutPage from './pages/AboutPage'
+import ProblemsPage from './pages/ProblemsPage'
+import ProblemDetailPage from './pages/ProblemDetailPage'
 
 /** Reset scroll to top on every route change. */
 function ScrollToTop() {
@@ -53,6 +55,8 @@ function App() {
         <Route path="/" element={<HeroPage />} />
         <Route path="/playground" element={<PlaygroundPage />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/problems" element={<ProblemsPage />} />
+        <Route path="/problems/:id" element={<ProblemDetailPage />} />
         <Route path="*" element={<HeroPage />} />
       </Routes>
     </HashRouter>
