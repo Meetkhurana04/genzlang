@@ -40,14 +40,14 @@ little language.
 
 ```bash
 # install the CLI globally from npm
-npm i -g yaplang
+npm i -g genzlang
 ```
 
 Verify it's available anywhere (from any directory, in any shell):
 
 ```bash
-yap --version    # -> 0.1.0
-yap --help       # usage
+genzlang --version    # -> 0.1.0
+genzlang --help       # usage
 ```
 
 Don't have npm publish access / want the latest from git? Install straight from
@@ -61,7 +61,7 @@ git clone https://github.com/xOAviOx/yap-lang.git
 cd yap-lang
 npm install
 npm run build
-npm install -g .                   # symlinks `yap`; after edits just re-run `npm run build`
+npm install -g .                   # symlinks `genzlang`; after edits just re-run `npm run build`
 ```
 
 ### Running your own `.yap` files
@@ -76,17 +76,17 @@ yap("yo, I'm running GenzLang 🔥")
 Run it with the global command, from that file's folder or via a full path:
 
 ```bash
-yap hello.yap                 # relative to your current directory
-yap C:\Users\you\hello.yap    # or an absolute path (Windows)
-yap /home/you/hello.yap       # or an absolute path (macOS/Linux)
+genzlang hello.yap                 # relative to your current directory
+genzlang C:\Users\you\hello.yap    # or an absolute path (Windows)
+genzlang /home/you/hello.yap       # or an absolute path (macOS/Linux)
 ```
 
 The repo ships a `mycode.yap` scratchpad and an `examples/` folder to copy from:
 
 ```bash
-yap examples/fizzbuzz.yap
-yap examples/fibonacci.yap
-yap mycode.yap
+genzlang examples/fizzbuzz.yap
+genzlang examples/fibonacci.yap
+genzlang mycode.yap
 ```
 
 > **No-install option:** to run without a global install, use the dev runner
@@ -319,7 +319,7 @@ src/
   interpreter.ts  tree-walking evaluator
   errors.ts       YapError classes with line info
   runner.ts       run(source, output) — public entry point
-  cli.ts          the `yap` command
+  cli.ts          the `genzlang` command
 playground/       single-page in-browser editor + runner
 examples/         hello, fizzbuzz, fibonacci, guess_logic
 tests/            vitest suites for lexer, parser, interpreter

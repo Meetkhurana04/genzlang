@@ -1,10 +1,10 @@
 {
-  "name": "yaplang",
+  "name": "genzlang",
   "version": "0.1.0",
-  "description": "YapLang — a beginner-friendly toy programming language whose keywords are Gen-Z slang. Real lexer → parser → tree-walking interpreter.",
+  "description": "GenzLang — a beginner-friendly toy programming language whose keywords are Gen-Z slang. Real lexer → parser → tree-walking interpreter.",
   "type": "module",
   "bin": {
-    "yap": "dist/cli.js"
+    "genzlang": "dist/cli.js"
   },
   "files": [
     "dist",

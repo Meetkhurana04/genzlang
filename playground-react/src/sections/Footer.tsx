@@ -57,7 +57,7 @@ export default function Footer() {
             GitHub
           </a>
           <a
-            href="https://www.npmjs.com/package/yaplang"
+            href="https://www.npmjs.com/package/genzlang"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[9px] sm:text-[10px] uppercase tracking-widest text-text-hint hover:text-text-primary transition-colors inline-flex items-center gap-1.5"

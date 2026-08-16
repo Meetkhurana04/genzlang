@@ -34,7 +34,7 @@ export function run(source: string, output: OutputFn = defaultOutput): RunResult
       output(e.message);
       return { ok: false, error: e.message };
     }
-    // Anything else is a bug in YapLang itself — still don't dump a raw trace.
+    // Anything else is a bug in GenzLang itself — still don't dump a raw trace.
     const detail = e instanceof Error ? e.message : String(e);
     const message = `💀 ${LANGUAGE_NAME} tripped over itself (this is a bug): ${detail}`;
     output(message);

@@ -16,7 +16,7 @@ export default defineConfig([
   // Self-contained browser bundle for the playground. The playground page
   // imports this with a relative path so `npx serve playground` just works.
   {
-    entry: { yaplang: "src/runner.ts" },
+    entry: { genzlang: "src/runner.ts" },
     format: ["esm"],
     dts: false,
     clean: false,

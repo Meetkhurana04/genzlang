@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * YapLang CLI.
+ * GenzLang CLI.
  *
  * Usage:
- *   yap <file.yap>     run a program
- *   yap --version      print version
- *   yap --help         print usage
+ *   genzlang <file.yap>     run a program
+ *   genzlang --version      print version
+ *   genzlang --help         print usage
  *
  * Arg parsing is intentionally dependency-free.
  */
@@ -22,12 +22,12 @@ function usage(): string {
     `${LANGUAGE_NAME} v${VERSION} — a Gen-Z toy language 🔥`,
     "",
     "Usage:",
-    `  yap <file${FILE_EXTENSION}>     run a program`,
-    "  yap --version          print the version",
-    "  yap --help             show this help",
+    `  genzlang <file${FILE_EXTENSION}>     run a program`,
+    "  genzlang --version          print the version",
+    "  genzlang --help             show this help",
     "",
     "Example:",
-    "  yap examples/fizzbuzz.yap",
+    "  genzlang examples/fizzbuzz.yap",
   ].join("\n");
 }
 
